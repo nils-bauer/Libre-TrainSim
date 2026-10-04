@@ -247,7 +247,7 @@ func remove_point(index: int):
 
 func add_point(point: RoutePoint) -> void:
 	route_points.append(point)
-	point.connect("route_rebuild_required", self, "_on_route_changed")
+	Validate.ok(point.connect("route_rebuild_required", self, "_on_route_changed"))
 	dirty = true
 
 

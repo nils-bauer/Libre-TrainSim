@@ -4,7 +4,7 @@ var selected_track: String = ""
 
 
 func _ready() -> void:
-	$ScenarioList.connect("visibility_changed", self, "_on_ScenarioList_visibility_changed")
+	Validate.ok($ScenarioList.connect("visibility_changed", self, "_on_ScenarioList_visibility_changed"))
 
 
 func show() -> void:
