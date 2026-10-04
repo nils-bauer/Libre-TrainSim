@@ -42,7 +42,7 @@ func _init() -> void:
 	calculated_rail_route = []
 
 
-func duplicate(recursive: bool = true):
+func duplicate(_deep: bool = true):
 	var copy = get_script().new()
 
 	copy.description = description

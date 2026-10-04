@@ -38,7 +38,7 @@ func get_description() -> String:
 	return "Unknown"
 
 
-func duplicate(deep: bool = true):
+func duplicate(_deep: bool = true):
 	var copy = get_script().new()
 
 	copy.station_node_name = station_node_name

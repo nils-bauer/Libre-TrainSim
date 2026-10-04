@@ -12,7 +12,7 @@ func get_description() -> String:
 	return "Spawn Point"
 
 
-func duplicate(deep: bool = true):
+func duplicate(_deep: bool = true):
 	var copy = get_script().new()
 
 	copy.rail_name = rail_name
