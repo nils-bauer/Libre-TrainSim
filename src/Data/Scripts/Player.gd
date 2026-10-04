@@ -1715,7 +1715,7 @@ func _on_scenario_ended() -> void:
 			LoadingScreen.load_editor(Root.current_track.get_basename(), screenshot)
 		GameStartContext.ScenarioEditor:
 			Root.Editor = true
-			get_tree().change_scene_to(load("res://Editor/Modules/scenario_editor.tscn"))
+			Validate.ok(get_tree().change_scene_to(load("res://Editor/Modules/scenario_editor.tscn")))
 
 
 # rail has to be in baked_route
