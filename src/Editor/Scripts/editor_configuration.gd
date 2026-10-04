@@ -5,6 +5,7 @@ extends Control
 onready var editor_directory: String = jSaveManager.get_setting("editor_directory_path", "user://editor/")
 onready var track_list := $PanelContainer/VBoxContainer/TracksList as jList
 onready var editor_path := $PanelContainer/VBoxContainer/HBoxContainer/EditorPath as LineEdit
+onready var item_list := $PanelContainer/VBoxContainer/TracksList/VBoxContainer/ItemList as ItemList
 
 
 var dir := Directory.new()
@@ -15,7 +16,8 @@ func _ready() -> void:
 	_initialize_editor_directory()
 	editor_path.text = editor_directory
 	_find_content()
-	$PanelContainer/VBoxContainer/TracksList/VBoxContainer/ItemList.select(0)
+	if(item_list.get_item_count()>0):
+		item_list.select(0)
 
 
 func show() -> void:
