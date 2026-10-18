@@ -683,7 +683,7 @@ func handle_drag_mode() -> void:
 				Validate.ok($EditorHUD/SnapDialog.connect("confirmed", self, "_snap_complex_connector", [snap_pos, snap_rot], CONNECT_ONESHOT))
 	else:
 		if _last_connected_signal != "" and $EditorHUD/SnapDialog.is_connected("confirmed", self, _last_connected_signal):
-			$EditorHUD/SnapDialog.disconnect("confirmed", self, _last_connected_signal)
+			Validate.ok($EditorHUD/SnapDialog.disconnect("confirmed", self, _last_connected_signal))
 		$EditorHUD/SnapDialog.hide()
 
 

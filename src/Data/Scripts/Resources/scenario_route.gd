@@ -240,7 +240,7 @@ func get_minimal_platform_length(world: Node) -> int:
 
 
 func remove_point(index: int):
-	route_points[index].disconnect("route_rebuild_required", self, "_on_route_changed")
+	Validate.ok(route_points[index].disconnect("route_rebuild_required", self, "_on_route_changed"))
 	route_points.remove(index)
 	dirty = true
 
@@ -285,4 +285,4 @@ func _on_route_changed(changed_point: RoutePoint) -> void:
 		return
 	dirty = route_points.has(changed_point)
 	if !dirty:
-		changed_point.disconnect("route_rebuild_required", self, "_on_route_changed")
+		Validate.ok(changed_point.disconnect("route_rebuild_required", self, "_on_route_changed"))

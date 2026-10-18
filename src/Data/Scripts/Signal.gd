@@ -41,7 +41,7 @@ func update_visual_instance() -> void:
 	visible = rail.visible
 	if not rail.visible:
 		if get_node_or_null("VisualInstance") != null:
-			self.disconnect("signal_changed", $VisualInstance, "update_visual_instance")
+			Validate.ok(self.disconnect("signal_changed", $VisualInstance, "update_visual_instance"))
 			$VisualInstance.queue_free()
 			if get_node_or_null("SelectCollider") != null:
 				$SelectCollider.queue_free()
