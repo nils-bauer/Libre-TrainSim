@@ -9,8 +9,8 @@ func get_description() -> String:
 	return "Despawn Point"
 
 
-func duplicate(_deep: bool = true):
-	var copy = get_script().new()
+func duplicate(deep: bool = true):
+	var copy = .duplicate(deep) if deep else get_script().new()
 
 	copy.rail_name = rail_name
 	copy.distance_on_rail = distance_on_rail
