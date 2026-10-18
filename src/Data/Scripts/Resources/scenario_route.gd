@@ -276,7 +276,7 @@ func move_point_down(index: int) -> void:
 
 func connect_points() -> void:
 	for point in route_points:
-		point.connect("route_rebuild_required", self, "_on_route_changed")
+		Validate.ok(point.connect("route_rebuild_required", self, "_on_route_changed"))
 
 
 func _on_route_changed(changed_point: RoutePoint) -> void:
